@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mayo Clinic Research Fellow Association (MRFA), Florida</title>
+  <meta name="description" content="Events from the Mayo Clinic Research Fellow Association in Florida, including MRFA Research Day.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mayo Clinic Research Fellow Association (MRFA), Florida">
+  <meta property="og:description" content="Events from the Mayo Clinic Research Fellow Association in Florida, including MRFA Research Day.">
+  <meta property="og:url" content="https://mrfa-florida.github.io/">
+  <meta property="og:image" content="https://mrfa-florida.github.io/assets/og-card.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a2d5c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Familjen+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/mayo-clinic-logo.svg" type="image/svg+xml">
+  <script src="assets/theme.js"></script>
+  <style>
+    :root { --paper:#f4f7fb; --surface:#fff; --ink:#0f1e33; --muted:#4f6079; --line:#d6e0ec; --blue:#0157b8; --navy:#0a2d5c; --sunset:#f6b48a; color-scheme: light; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#0b1626; --surface:#111f34; --ink:#e4ecf7; --muted:#9fb0c8; --line:#233652; --blue:#5aa2f0; color-scheme: dark; } }
+    :root[data-theme="dark"] { --paper:#0b1626; --surface:#111f34; --ink:#e4ecf7; --muted:#9fb0c8; --line:#233652; --blue:#5aa2f0; color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:400 1.0625rem/1.55 "Atkinson Hyperlegible", system-ui, sans-serif; }
+    h1,h2,h3 { font-family:"Familjen Grotesk", system-ui, sans-serif; line-height:1.1; margin:0; }
+    a { color: var(--blue); }
+    :focus-visible { outline:3px solid var(--blue); outline-offset:2px; border-radius:4px; }
+    .wrap { max-width:46rem; margin:0 auto; padding:0 1rem; }
+    header { position:relative; color:#fff; background:var(--navy) url("assets/campus-palms.jpg") center 35%/cover; isolation:isolate; }
+    @media (max-width:700px) { header { background-image:url("assets/campus-palms-sm.jpg"); } }
+    header::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(0deg, rgba(7,26,54,.96) 10%, rgba(1,87,184,.55) 70%, rgba(1,87,184,.2)); }
+    .hd { padding:1.25rem 1rem 2.5rem; }
+    .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:5rem; }
+    .top img { width:64px; height:64px; }
+    .theme-btn { display:inline-flex; align-items:center; gap:.35rem; font:600 .85rem "Atkinson Hyperlegible", sans-serif; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.45); border-radius:999px; padding:.4rem .7rem; min-height:36px; cursor:pointer; }
+    .theme-btn .ic { width:1rem; height:1rem; display:none; }
+    .theme-btn[data-mode="auto"] .ic-auto, .theme-btn[data-mode="light"] .ic-light, .theme-btn[data-mode="dark"] .ic-dark { display:block; }
+    header h1 { font-size:clamp(2.2rem, 8vw, 3.6rem); letter-spacing:-.02em; max-width:16ch; }
+    header h1 span { display:block; color:var(--sunset); font-weight:500; }
+    header p { color:#d3e3f7; margin:.9rem 0 0; max-width:34rem; }
+    main.wrap { padding-top:2.5rem; padding-bottom:3rem; }
+    h2 { font-size:1.6rem; margin-bottom:1rem; }
+    .events { list-style:none; margin:0; padding:0; display:grid; gap:.9rem; }
+    .ev a { display:grid; grid-template-columns:5.5rem 1fr; gap:1rem; padding:1.1rem; background:var(--surface); border:1px solid var(--line); border-radius:14px; text-decoration:none; color:var(--ink); }
+    .ev a:hover { border-color:var(--blue); }
+    .date { align-self:start; text-align:center; border-radius:10px; background:var(--navy); color:#fff; padding:.6rem .3rem; font-family:"Familjen Grotesk", sans-serif; line-height:1.05; }
+    .date b { display:block; font-size:2rem; }
+    .date small { display:block; font-size:.8rem; text-transform:none; opacity:.85; }
+    .ev h3 { font-size:1.25rem; }
+    .ev .ed { color:var(--blue); font-weight:600; }
+    .ev p { margin:.35rem 0 0; color:var(--muted); font-size:.95rem; }
+    .ev .go { display:inline-block; margin-top:.6rem; color:var(--blue); font-weight:700; }
+    .past h2 { margin-top:2.5rem; }
+    footer { border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+    footer .wrap { display:flex; gap:1rem; align-items:center; padding:1.5rem 1rem 3rem; }
+    footer img { width:40px; height:40px; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) footer img { filter: invert(1); } }
+    :root[data-theme="dark"] footer img { filter: invert(1); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hd">
+      <div class="top">
+        <img src="assets/mayo-clinic-logo-white.svg" alt="Mayo Clinic">
+        <button type="button" class="theme-btn" id="theme-btn" aria-label="Theme">
+          <svg class="ic ic-auto" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 3a7 7 0 0 1 0 14z" fill="currentColor"/></svg>
+          <svg class="ic ic-light" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 1.8v2.2M10 16v2.2M1.8 10h2.2M16 10h2.2M4.2 4.2l1.6 1.6M14.2 14.2l1.6 1.6M4.2 15.8l1.6-1.6M14.2 5.8l1.6-1.6"/></g></svg>
+          <svg class="ic ic-dark" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+          <span class="theme-label">Auto</span>
+        </button>
+      </div>
+      <h1>Mayo Clinic Research Fellow Association<span>Florida</span></h1>
+      <p>Events and programs for research trainees at Mayo Clinic in Florida.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section aria-labelledby="h-up"><h2 id="h-up">Upcoming</h2><ul class="events" id="upcoming"></ul></section>
+    <section class="past" id="past-wrap" hidden aria-labelledby="h-past"><h2 id="h-past">Past events</h2><ul class="events" id="past"></ul></section>
+  </main>
+  <footer><div class="wrap"><img src="assets/mayo-clinic-logo.svg" alt=""><p>Mayo Clinic Research Fellow Association (MRFA), Florida</p></div></footer>
+  <script>
+  (() => {
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+    const card = (e) => {
+      const d = new Date(e.date + "T12:00:00");
+      return `<li class="ev"><a href="${esc(e.url)}">
+        <span class="date"><small>${d.toLocaleString("en-US", { month: "short" })}</small><b>${d.getDate()}</b><small>${d.getFullYear()}</small></span>
+        <span><h3>${esc(e.title)} <span class="ed">${esc(e.edition || "")}</span></h3>
+        <p>${esc(e.dateLabel)}, ${esc(e.place)}</p><p>${esc(e.summary || "")}</p><span class="go">View program, abstracts and speakers</span></span></a></li>`;
+    };
+    fetch("events.json?v=" + Date.now(), { cache: "no-store" }).then((r) => r.json()).then(({ events }) => {
+      const up = events.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+      const past = events.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date));
+      document.getElementById("upcoming").innerHTML = up.length ? up.map(card).join("") : "<li>New events will be posted here.</li>";
+      if (past.length) { document.getElementById("past-wrap").hidden = false; document.getElementById("past").innerHTML = past.map(card).join(""); }
+    });
+  })();
+  </script>
+</body>
+</html>
