@@ -57,6 +57,17 @@
     footer img { width:40px; height:40px; }
     @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) footer img { filter: invert(1); } }
     :root[data-theme="dark"] footer img { filter: invert(1); }
+    .gallery-wrap { margin-top:2.5rem; }
+    .gallery { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(10rem, 1fr)); gap:.6rem; }
+    .gallery figure { margin:0; }
+    .gallery button { display:block; width:100%; padding:0; border:0; border-radius:10px; overflow:hidden; cursor:zoom-in; background:var(--line); aspect-ratio:4/3; }
+    .gallery img { width:100%; height:100%; object-fit:cover; display:block; }
+    .gallery figcaption { font-size:.85rem; color:var(--muted); margin-top:.3rem; line-height:1.35; }
+    #lightbox { border:0; padding:0; background:transparent; max-width:96vw; max-height:92vh; }
+    #lightbox::backdrop { background:rgba(5,15,30,.9); }
+    #lightbox img { max-width:96vw; max-height:80vh; display:block; border-radius:8px; }
+    #lightbox p { color:#fff; margin:.6rem 0 0; text-align:center; }
+    #lightbox button { position:fixed; top:1rem; right:1rem; font:700 1rem sans-serif; color:#fff; background:rgba(255,255,255,.15); border:0; border-radius:999px; padding:.6rem .9rem; cursor:pointer; }
   </style>
 </head>
 <body>
@@ -77,8 +88,10 @@
   </header>
   <main class="wrap">
     <section aria-labelledby="h-up"><h2 id="h-up">Upcoming</h2><ul class="events" id="upcoming"></ul></section>
+    <section class="gallery-wrap" id="gallery-wrap" hidden aria-labelledby="h-photos"><h2 id="h-photos">Photos</h2><ul class="gallery" id="gallery"></ul></section>
     <section class="past" id="past-wrap" hidden aria-labelledby="h-past"><h2 id="h-past">Past events</h2><ul class="events" id="past"></ul></section>
   </main>
+  <dialog id="lightbox" aria-label="Photo"><button type="button" onclick="this.closest('dialog').close()">Close</button><img alt="" id="lb-img"><p id="lb-cap"></p></dialog>
   <footer><div class="wrap"><img src="assets/mayo-clinic-logo.svg" alt=""><p>Mayo Clinic Research Fellow Association (MRFA), Florida</p></div></footer>
   <script>
   (() => {
@@ -91,6 +104,20 @@
         <span><h3>${esc(e.title)} <span class="ed">${esc(e.edition || "")}</span></h3>
         <p>${esc(e.dateLabel)}, ${esc(e.place)}</p><p>${esc(e.summary || "")}</p><span class="go">View program, abstracts and speakers</span></span></a></li>`;
     };
+    fetch("photos.json?v=" + Date.now(), { cache: "no-store" }).then((r) => r.json()).then(({ photos }) => {
+      if (!photos || !photos.length) return;
+      document.getElementById("gallery-wrap").hidden = false;
+      document.getElementById("gallery").innerHTML = photos.map((p, i) => `<li><figure>
+        <button type="button" data-i="${i}" aria-label="Open photo${p.caption ? ": " + esc(p.caption) : ""}"><img src="${esc(p.src)}" alt="${esc(p.alt || p.caption || "")}" loading="lazy"></button>
+        ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ""}</figure></li>`).join("");
+      document.getElementById("gallery").addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-i]"); if (!b) return;
+        const p = photos[+b.dataset.i];
+        document.getElementById("lb-img").src = p.src; document.getElementById("lb-img").alt = p.alt || p.caption || "";
+        document.getElementById("lb-cap").textContent = p.caption || "";
+        document.getElementById("lightbox").showModal();
+      });
+    }).catch(() => {});
     fetch("events.json?v=" + Date.now(), { cache: "no-store" }).then((r) => r.json()).then(({ events }) => {
       const up = events.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
       const past = events.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date));

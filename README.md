@@ -6,3 +6,16 @@ Landing page for the Mayo Clinic Research Fellow Association (MRFA), Florida: ht
 1. Create the event repository from the `research-day-2026` template (green **Use this template** button), name it e.g. `research-day-2027`, edit its `data/event.json`, and turn on Pages.
 2. Add an entry to `events.json` here with the date and `"url": "research-day-2027/"`.
 Events move from **Upcoming** to **Past events** automatically after their date.
+
+## Adding photos
+1. Upload photos to `assets/photos/` (Add file → Upload files). Any size works; ask Claude to resize them so the page stays fast.
+2. Add one line per photo to `photos.json`, for example:
+```json
+{
+  "photos": [
+    { "src": "assets/photos/research-day-2026-awards.jpg", "caption": "Award recipients, MRFA Research Day 2026" },
+    { "src": "assets/photos/poster-session.jpg", "caption": "Poster session, Kinne Auditorium" }
+  ]
+}
+```
+The Photos section appears automatically once the list has at least one photo. Tapping a photo opens it full size.
