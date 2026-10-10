@@ -8,7 +8,7 @@ Landing page for the Mayo Clinic Research Fellow Association (MRFA), Florida: ht
 Events move from **Upcoming** to **Past events** automatically after their date.
 
 ## Adding photos
-1. Upload photos to `assets/photos/` (Add file → Upload files). Any size works; ask Claude to resize them so the page stays fast.
+1. Upload photos to `assets/photos/` (Add file → Upload files). Keep them under ~500 KB (about 1800 px wide); ask Claude to resize large camera files. An optional `"thumb"` (about 640 px) loads in the grid, and the full photo opens on tap.
 2. Add one line per photo to `photos.json`, for example:
 ```json
 {

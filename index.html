@@ -108,7 +108,7 @@
       if (!photos || !photos.length) return;
       document.getElementById("gallery-wrap").hidden = false;
       document.getElementById("gallery").innerHTML = photos.map((p, i) => `<li><figure>
-        <button type="button" data-i="${i}" aria-label="Open photo${p.caption ? ": " + esc(p.caption) : ""}"><img src="${esc(p.src)}" alt="${esc(p.alt || p.caption || "")}" loading="lazy"></button>
+        <button type="button" data-i="${i}" aria-label="Open photo${p.caption ? ": " + esc(p.caption) : ""}"><img src="${esc(p.thumb || p.src)}" alt="${esc(p.alt || p.caption || "")}" loading="lazy"></button>
         ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ""}</figure></li>`).join("");
       document.getElementById("gallery").addEventListener("click", (e) => {
         const b = e.target.closest("button[data-i]"); if (!b) return;

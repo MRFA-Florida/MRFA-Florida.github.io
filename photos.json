@@ -1,3 +1,28 @@
 {
-  "photos": []
+  "photos": [
+    {
+      "src": "assets/photos/mrfa-team.jpg",
+      "thumb": "assets/photos/mrfa-team-thumb.jpg",
+      "caption": "MRFA Florida team: Regina Castaneda, Alfredo Verastegui and Maria Estevez",
+      "alt": "Three members of the MRFA Florida team standing together in a bright atrium"
+    },
+    {
+      "src": "assets/photos/campus-2.jpg",
+      "thumb": "assets/photos/campus-2-thumb.jpg",
+      "caption": "Mayo Clinic in Florida, Jacksonville",
+      "alt": "Mayo Clinic hospital building in Jacksonville under a blue sky, with palm trees in front"
+    },
+    {
+      "src": "assets/photos/campus-1.jpg",
+      "thumb": "assets/photos/campus-1-thumb.jpg",
+      "caption": "Mayo Clinic in Florida, Jacksonville",
+      "alt": "Glass facade of a Mayo Clinic building with the Mayo Clinic sign"
+    },
+    {
+      "src": "assets/photos/campus-3.jpg",
+      "thumb": "assets/photos/campus-3-thumb.jpg",
+      "caption": "Mayo Clinic in Florida campus",
+      "alt": "Campus walkway with palm trees and a silver sculpture in front of a modern building"
+    }
+  ]
 }
