@@ -69,14 +69,23 @@
     :root[data-theme="dark"] footer img { filter: invert(1); }
     .gallery-wrap { margin-top:2.5rem; }
     .lead { margin-top:2.5rem; }
-    .people { list-style:none; margin:0 0 1.5rem; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
-    .people > li { flex:0 1 calc((100% - 2rem) / 3); }
-    .person { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:.8rem; text-align:center; }
-    .person img { width:100%; aspect-ratio:1; height:auto; object-fit:cover; border-radius:10px; display:block; margin-bottom:.7rem; }
-    .person .kicker { margin:0 0 .2rem; font-weight:700; font-size:.8rem; color:var(--blue); text-transform:uppercase; letter-spacing:.04em; }
-    .person h3 { font-size:1.05rem; margin:0; }
-    .person .t { margin:.3rem 0 0; color:var(--muted); font-size:.85rem; }
-    @media (max-width:30rem) { .people { gap:.7rem; } .people > li { flex-basis:calc((100% - .7rem) / 2); } .person h3 { font-size:.95rem; } }
+    .panel { display:grid; gap:1.1rem; align-items:start; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.1rem; margin:0 0 1rem; }
+    .panel img { width:100%; aspect-ratio:1; height:auto; object-fit:cover; object-position:center 20%; border-radius:12px; display:block; }
+    .panel .kicker { margin:0 0 .2rem; font-weight:700; font-size:.8rem; color:var(--blue); text-transform:uppercase; letter-spacing:.04em; }
+    .panel h3 { margin:0; }
+    .panel .t { margin:.3rem 0 0; font-weight:700; font-size:.95rem; }
+    .panel .r { margin:.2rem 0 0; color:var(--muted); font-size:.92rem; }
+    .panel .b { margin:.6rem 0 0; font-size:.95rem; line-height:1.55; }
+    .panel.big { grid-template-columns:11rem 1fr; }
+    .panel.big h3 { font-size:1.35rem; }
+    .panel.mid { grid-template-columns:7rem 1fr; padding:.9rem; }
+    .panel.mid h3 { font-size:1.1rem; }
+    .panel.mid .b { font-size:.9rem; }
+    .members { list-style:none; padding:0; margin:0 0 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .panel.sm { grid-template-columns:4rem 1fr; align-items:center; padding:.7rem; gap:.8rem; margin:0; }
+    .panel.sm h3 { font-size:1rem; }
+    .panel.sm .kicker { font-size:.72rem; }
+    @media (max-width:34rem) { .panel.big { grid-template-columns:1fr; } .panel.big img { width:11rem; } .panel.mid { grid-template-columns:5.5rem 1fr; } .members { grid-template-columns:1fr; gap:.7rem; } }
     .team { margin:1rem 0 0; }
     .team img { width:100%; height:auto; display:block; border-radius:14px; }
     .team figcaption { margin-top:.5rem; color:var(--muted); font-size:.92rem; }
@@ -115,12 +124,38 @@
     <section aria-labelledby="h-up"><h2 id="h-up">Upcoming</h2><ul class="events" id="upcoming"></ul></section>
     <section class="lead" aria-labelledby="h-lead">
       <h2 id="h-lead">Leadership</h2>
-      <ul class="people">
-        <li class="person"><img src="assets/photos/castaneda-regina.jpg" alt="Regina Castaneda, MD" width="400" height="400" loading="lazy"><p class="kicker">Chair</p><h3>Regina Castaneda, MD</h3><p class="t">MRFA Florida</p></li>
-        <li class="person"><img src="assets/photos/alfredo-verastegui.jpg" alt="Alfredo Verastegui, MD" width="400" height="400" loading="lazy"><p class="kicker">Chair of Education</p><h3>Alfredo Verastegui, MD</h3><p class="t">MRFA Florida</p></li>
-        <li class="person"><img src="assets/photos/maria-estevez.jpg" alt="Maria Estevez, MD" width="400" height="400" loading="lazy"><p class="kicker">Chair of Events</p><h3>Maria Estevez, MD</h3><p class="t">MRFA Florida</p></li>
-        <li class="person"><img src="assets/photos/yu-jiakun.jpg" alt="Jiakun Yu" width="400" height="400" loading="lazy"><p class="kicker">Research Trainee</p><h3>Jiakun Yu</h3><p class="t">Events team</p></li>
-        <li class="person dean-p"><img src="assets/photos/fernandez-bussy.jpg" alt="Sebastian Fernandez-Bussy, MD" width="400" height="400" loading="lazy"><p class="kicker">Dean of Research</p><h3>Sebastian Fernandez-Bussy, MD</h3><p class="t">Mayo Clinic in Florida</p></li>
+      <article class="panel big">
+        <img src="assets/photos/fernandez-bussy.jpg" alt="Sebastian Fernandez-Bussy, MD" width="400" height="400">
+        <div>
+          <p class="kicker">Dean of Research</p>
+          <h3>Sebastian Fernandez-Bussy, MD</h3>
+          <p class="t">James C. and Sarah K. Kennedy Dean of Research, Mayo Clinic in Florida</p>
+          <p class="r">Professor of Medicine; Chair, Division of Pulmonary, Allergy and Sleep Medicine</p>
+          <p class="b">Sebastian Fernandez-Bussy, MD, is the James C. and Sarah K. Kennedy Dean of Research at Mayo Clinic in Florida and Professor of Medicine. An interventional pulmonologist, he chairs the Division of Pulmonary, Allergy and Sleep Medicine and directs the Section of Interventional Pulmonology and the Procedure Innovation Team in Florida. His research spans robot-assisted and translational bronchoscopy, minimally invasive ablation for thoracic cancers, COPD and central airway disorders, and AI-driven biomarkers. He trained in Argentina, at the University of Florida, and at Heidelberg University, where he is a visiting professor, and he directs the Endoscopy Department of the Latin American Thoracic Society.</p>
+        </div>
+      </article>
+      <article class="panel big">
+        <img src="assets/photos/castaneda-regina.jpg" alt="Regina Castaneda, MD" width="400" height="400">
+        <div>
+          <p class="kicker">Chair, MRFA Florida</p>
+          <h3>Regina Castaneda, MD</h3>
+          <p class="t">Chair, Mayo Clinic Research Fellow Association (MRFA), Florida</p>
+          <p class="r">Postdoctoral Research Fellow, Women's Health and Internal Medicine</p>
+          <p class="b">Regina Castaneda, MD, chairs the Mayo Clinic Research Fellow Association in Florida and is a postdoctoral research fellow in women’s health and internal medicine at Mayo Clinic in Jacksonville. Her research focuses on menopause, hormone therapy, and cardiometabolic health, with a particular interest in obesity treatment for midlife women. She has led multiple first-author publications in leading journals, including The Lancet, Annals of Internal Medicine, and JAMA, and her work on hormone therapy and tirzepatide was featured by the Endocrine Society at ENDO 2025. Her honors include the New Investigator Award from The Menopause Society (2025) and the MRFA Translational Research Award.</p>
+        </div>
+      </article>
+      <article class="panel mid">
+        <img src="assets/photos/alfredo-verastegui.jpg" alt="Alfredo Verastegui, MD" width="400" height="400">
+        <div>
+          <p class="kicker">Chair of Education</p>
+          <h3>Alfredo Verastegui, MD</h3>
+          <p class="r">Research Fellow, Divisions of Radiology and Surgery</p>
+          <p class="b">Alfredo Verastegui, MD, is a research fellow in the Divisions of Radiology and Surgery at Mayo Clinic in Florida. His work spans surgical outcomes research, women&rsquo;s health and endocrinology, and medical education.</p>
+        </div>
+      </article>
+      <ul class="members">
+        <li class="panel sm"><img src="assets/photos/maria-estevez.jpg" alt="Maria Estevez, MD" width="400" height="400" loading="lazy"><div><p class="kicker">Chair of Events</p><h3>Maria Estevez, MD</h3></div></li>
+        <li class="panel sm"><img src="assets/photos/yu-jiakun.jpg" alt="Jiakun Yu" width="400" height="400" loading="lazy"><div><p class="kicker">Research Trainee</p><h3>Jiakun Yu</h3></div></li>
       </ul>
       <figure class="team">
         <img src="assets/photos/mrfa-team.jpg" alt="Maria Estevez, MD, Alfredo Verastegui, MD, and Regina Castaneda, MD, standing together in a bright atrium" width="1440" height="1200" loading="lazy">
