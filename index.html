@@ -69,13 +69,14 @@
     :root[data-theme="dark"] footer img { filter: invert(1); }
     .gallery-wrap { margin-top:2.5rem; }
     .lead { margin-top:2.5rem; }
-    .dean { display:grid; grid-template-columns:8rem 1fr; gap:1.1rem; padding:1.1rem; background:var(--surface); border:1px solid var(--line); border-radius:14px; align-items:start; }
-    .dean img { width:8rem; height:8rem; object-fit:cover; border-radius:12px; display:block; }
-    .dean .kicker { margin:0 0 .2rem; font-weight:700; font-size:.85rem; color:var(--blue); }
-    .dean h3 { font-size:1.25rem; }
-    .dean .t { margin:.25rem 0 0; font-weight:700; font-size:.95rem; }
-    .dean .b { margin:.5rem 0 0; color:var(--muted); font-size:.95rem; }
-    @media (max-width:30rem) { .dean { grid-template-columns:1fr; } .dean img { width:9rem; height:9rem; } }
+    .people { list-style:none; margin:0 0 1.5rem; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
+    .people > li { flex:0 1 calc((100% - 2rem) / 3); }
+    .person { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:.8rem; text-align:center; }
+    .person img { width:100%; aspect-ratio:1; height:auto; object-fit:cover; border-radius:10px; display:block; margin-bottom:.7rem; }
+    .person .kicker { margin:0 0 .2rem; font-weight:700; font-size:.8rem; color:var(--blue); text-transform:uppercase; letter-spacing:.04em; }
+    .person h3 { font-size:1.05rem; margin:0; }
+    .person .t { margin:.3rem 0 0; color:var(--muted); font-size:.85rem; }
+    @media (max-width:30rem) { .people { gap:.7rem; } .people > li { flex-basis:calc((100% - .7rem) / 2); } .person h3 { font-size:.95rem; } }
     .team { margin:1rem 0 0; }
     .team img { width:100%; height:auto; display:block; border-radius:14px; }
     .team figcaption { margin-top:.5rem; color:var(--muted); font-size:.92rem; }
@@ -114,15 +115,13 @@
     <section aria-labelledby="h-up"><h2 id="h-up">Upcoming</h2><ul class="events" id="upcoming"></ul></section>
     <section class="lead" aria-labelledby="h-lead">
       <h2 id="h-lead">Leadership</h2>
-      <article class="dean">
-        <img src="assets/photos/fernandez-bussy.jpg" alt="Sebastian Fernandez-Bussy, MD" width="400" height="400">
-        <div>
-          <p class="kicker">Dean of Research</p>
-          <h3>Sebastian Fernandez-Bussy, MD</h3>
-          <p class="t">James C. and Sarah K. Kennedy Dean of Research, Mayo Clinic in Florida</p>
-          <p class="b">Professor of Medicine and Chair of the Division of Pulmonary, Allergy and Sleep Medicine. An interventional pulmonologist, he leads work in robot-assisted bronchoscopy, minimally invasive therapies for thoracic cancers, and AI-driven biomarkers.</p>
-        </div>
-      </article>
+      <ul class="people">
+        <li class="person"><img src="assets/photos/castaneda-regina.jpg" alt="Regina Castaneda, MD" width="400" height="400" loading="lazy"><p class="kicker">Chair</p><h3>Regina Castaneda, MD</h3><p class="t">MRFA Florida</p></li>
+        <li class="person"><img src="assets/photos/alfredo-verastegui.jpg" alt="Alfredo Verastegui, MD" width="400" height="400" loading="lazy"><p class="kicker">Chair of Education</p><h3>Alfredo Verastegui, MD</h3><p class="t">MRFA Florida</p></li>
+        <li class="person"><img src="assets/photos/maria-estevez.jpg" alt="Maria Estevez, MD" width="400" height="400" loading="lazy"><p class="kicker">Chair of Events</p><h3>Maria Estevez, MD</h3><p class="t">MRFA Florida</p></li>
+        <li class="person"><img src="assets/photos/yu-jiakun.jpg" alt="Jiakun Yu" width="400" height="400" loading="lazy"><p class="kicker">Research Trainee</p><h3>Jiakun Yu</h3><p class="t">Events team</p></li>
+        <li class="person dean-p"><img src="assets/photos/fernandez-bussy.jpg" alt="Sebastian Fernandez-Bussy, MD" width="400" height="400" loading="lazy"><p class="kicker">Dean of Research</p><h3>Sebastian Fernandez-Bussy, MD</h3><p class="t">Mayo Clinic in Florida</p></li>
+      </ul>
       <figure class="team">
         <img src="assets/photos/mrfa-team.jpg" alt="Maria Estevez, MD, Alfredo Verastegui, MD, and Regina Castaneda, MD, standing together in a bright atrium" width="1440" height="1200" loading="lazy">
         <figcaption><strong>MRFA Florida team.</strong> Left to right: Maria Estevez, MD, Chair of Events; Alfredo Verastegui, MD, Chair of Education; and Regina Castaneda, MD, Chair.</figcaption>
