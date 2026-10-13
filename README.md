@@ -1,6 +1,6 @@
 # MRFA Florida
 
-Landing page for the Mayo Clinic Research Fellow’s Association (MRFA), Florida: https://mrfa-florida.github.io
+Landing page for the Mayo Clinic Research Fellows’ Association (MRFA), Florida: https://mrfa-florida.github.io
 
 ## Adding a new event
 1. Create the event repository from the `research-day-2026` template (green **Use this template** button), name it e.g. `research-day-2027`, edit its `data/event.json`, and turn on Pages.
